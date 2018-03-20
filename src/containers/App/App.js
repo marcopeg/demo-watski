@@ -6,12 +6,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'antd/lib/layout'
+import Posts from '../Posts/Posts'
 import './App.css'
 
 // import logo from './logo.svg'
 
 const {
     Header,
+    Content,
 } = Layout
 
 const App = () => (
@@ -24,6 +26,9 @@ const App = () => (
             <Header>
                 <div className="App-test-logo">WATSKI</div>
             </Header>
+            <Content>
+                <Posts />
+            </Content>
         </Layout>
     </div>
 )
