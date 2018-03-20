@@ -5,9 +5,14 @@
 
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import Layout from 'antd/lib/layout'
+import './App.css'
 
 // import logo from './logo.svg'
-import './App.css'
+
+const {
+    Header,
+} = Layout
 
 const App = () => (
     <div className="App">
@@ -15,7 +20,11 @@ const App = () => (
             <html lang="en" />
             <title>[cra-ssr] server side rendering for create react app</title>
         </Helmet>
-        Hello Victor!
+        <Layout>
+            <Header>
+                <div className="App-test-logo">WATSKI</div>
+            </Header>
+        </Layout>
     </div>
 )
 
