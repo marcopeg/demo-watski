@@ -4,5 +4,6 @@ import { routerReducer as routing } from 'react-router-redux'
 
 export default {
     app: require('./app-reducer').default,
+    posts: require('./posts-reducer').default,
     routing,
 }
