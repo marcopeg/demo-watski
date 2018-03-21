@@ -6,6 +6,7 @@ export const initialState = {
         //     author: 'Author A',
         // }
     ],
+    error: false,
 }
 
 /**
@@ -13,10 +14,16 @@ export const initialState = {
  */
 
 export const SET_LIST = 'setList@posts'
+export const SET_ERROR = 'setError@posts'
 
 export const setList = items => ({
     type: SET_LIST,
     payload: items,
+})
+
+export const setError = err => ({
+    type: SET_ERROR,
+    payload: err,
 })
 
 
@@ -28,6 +35,10 @@ export const actionHandlers = {
     [SET_LIST]: (state, action) => ({
         ...state,
         list: action.payload,
+    }),
+    [SET_ERROR]: (state, action) => ({
+        ...state,
+        error: action.payload,
     }),
 }
 

@@ -1,17 +1,17 @@
-import { setList } from 'reducers/posts-reducer'
+import { setList, setError } from 'reducers/posts-reducer'
 import { getJSON } from 'lib/request'
 
-export const fetchPostsList = () => async () => {
+export const fetchPostsList = () => async (dispatch) => {
     const resourceName = 'posts'
-    const baseUrl = 'https://jsonplaceholder.typicode.com/'
+    const baseUrl = 'https://jsnplaceholder.typicode.com/'
     const url = `${baseUrl}${resourceName}`
     try {
-        const response = getJSON(url)
+        const response = await getJSON(url)
         return response
     } catch (err) {
-        const errorMessage = `failed to fetch ${resourceName}`
-        console.log(errorMessage)
-        throw (Error(err))
+        const errorMessage = `${err} ${resourceName} using url ${url}`
+        dispatch(setError(errorMessage))
+        throw (errorMessage)
     }
 }
 
