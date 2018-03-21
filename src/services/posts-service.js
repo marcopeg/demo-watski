@@ -1,23 +1,11 @@
 import { setList } from 'reducers/posts-reducer'
+import { getJSON } from 'lib/request'
 
-export const loadPosts = () => (dispatch) => {
-    const posts = [{
-        key: '1',
-        title: 'Post 1',
-        author: 'Author A',
-    }, {
-        key: '2',
-        title: 'Post 2',
-        author: 'Author B',
-    }, {
-        key: '3',
-        title: 'Post 3',
-        author: 'Author C',
-    }]
+export const fetchPostsList = () => () => getJSON('https://jsonplaceholder.typicode.com/posts')
 
-    setTimeout(() => {
-        dispatch(setList(posts))
-    }, 500)
+export const loadPosts = () => async (dispatch) => {
+    const posts = await dispatch(fetchPostsList())
+    dispatch(setList(posts))
 }
 
 export const start = () => (dispatch) => {

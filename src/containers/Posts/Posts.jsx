@@ -10,9 +10,9 @@ const state2props = ({ posts }) => ({
         key: 'title',
         render: title => <p>{title}</p>,
     }, {
-        title: 'Author',
-        dataIndex: 'author',
-        key: 'author',
+        title: 'Author ID',
+        dataIndex: 'userId',
+        key: 'userId',
         render: author => <p>{author}</p>,
     }],
     posts: posts.list,

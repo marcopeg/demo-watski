@@ -6,7 +6,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'antd/lib/layout'
-import Posts from '../Posts/Posts'
+import Posts from 'containers/Posts'
 import './App.css'
 
 // import logo from './logo.svg'
